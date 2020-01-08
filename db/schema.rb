@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_141814) do
+ActiveRecord::Schema.define(version: 2020_01_08_020721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 2019_12_15_141814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "playbook_id"
+    t.bigint "user_id"
     t.index ["playbook_id"], name: "index_hunters_on_playbook_id"
+    t.index ["user_id"], name: "index_hunters_on_user_id"
   end
 
   create_table "hunters_gears", force: :cascade do |t|
@@ -152,6 +154,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_141814) do
 
   add_foreign_key "gears", "playbooks"
   add_foreign_key "hunters", "playbooks"
+  add_foreign_key "hunters", "users"
   add_foreign_key "hunters_gears", "gears"
   add_foreign_key "hunters_gears", "hunters"
   add_foreign_key "hunters_moves", "hunters"
