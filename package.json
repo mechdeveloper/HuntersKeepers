@@ -13,9 +13,6 @@
     "vue-template-compiler": "^2.6.11",
     "vue-turbolinks": "^2.0.4"
   },
-  "scripts": {
-    "heroku-postbuild": "yarn run webpack:deploy"
-  },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.10.1"
