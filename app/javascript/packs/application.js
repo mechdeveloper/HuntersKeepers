@@ -27,6 +27,7 @@ Vue.use(Buefy, TurbolinksAdapter)
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
     el: '#vue-app',
-    components: { App, HuntersImprovementForm, HunterRatings }
+    components: { App, HuntersImprovementForm, HunterRatings },
+    render: function() {}
   })
 })
